@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "PixelOutline";
+  background-color: black;
+  @apply text-white;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "PixelOutline"; /*Can be any text*/
+  src: local("OutlinePixel7Solid"),
+    url("./font/OutlinePixel7Solid.ttf") format("truetype");
+}
+
+h1 {
+  @apply text-2xl;
+}
