@@ -13,7 +13,7 @@ const RegistrationPage = () => {
     <section className="flex flex-col">
       <TitleScreen image={headerRegister} size="w-[500px]" />
       {/* <img src={headerLogin} alt="logo" className="w-[450px] mx-auto" /> */}
-      <div className="w-full h-[600px] flex flex-col justify-center items-center">
+      <div className="w-full h-[600px] flex flex-col justify-start items-center">
         <div className="w-full flex flex-col justify-center items-center gap-8">
           {/* content */}
 

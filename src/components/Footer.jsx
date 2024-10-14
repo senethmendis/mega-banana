@@ -2,9 +2,9 @@ import { ArrowLeft, LogOut, Volume2, VolumeOff } from "lucide-react";
 import React, { useState } from "react";
 import { OptionButton } from "./OptionButton";
 import { useNavigate } from "react-router-dom";
+import { Howl, Howler } from "howler";
 
 const Footer = ({ children, visibility = true }) => {
-  const [toggle, setToggle] = useState(false);
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -14,9 +14,6 @@ const Footer = ({ children, visibility = true }) => {
         {visibility ? <ArrowLeft onClick={() => navigate(-1)} /> : null}
 
         {children}
-        <OptionButton onClick={() => setToggle((prev) => !prev)}>
-          {toggle ? <VolumeOff /> : <Volume2 />}
-        </OptionButton>
       </div>
     </footer>
   );

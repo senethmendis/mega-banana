@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import bgMusic from "../assets/sound/hover.mp3";
+import Arrow from "../components/Arrow";
 
 const MenuButton = ({ link, lable }) => {
   const [value, setvalue] = useState(0);
+  const [visible, setVisible] = useState(false);
   const audioRef = useRef(new Audio(bgMusic)); // Reuse the same Audio instance
 
   const play = () => {
@@ -23,10 +25,14 @@ const MenuButton = ({ link, lable }) => {
   return (
     <Link
       to={link}
-      className="text-2xl hover:text-yellow-300"
-      onMouseEnter={() => setvalue(value + 1)}
+      className="w-[300px] text-2xl hover:text-yellow-300 flex items-start  gap-6"
+      onMouseEnter={() => {
+        setvalue(value + 1);
+        setVisible(true);
+      }}
+      onMouseLeave={() => setVisible(false)}
     >
-      {lable}
+      {lable} {visible ? <Arrow /> : null}
     </Link>
   );
 };

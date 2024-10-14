@@ -4,8 +4,21 @@ import MenuButton from "../components/MenuButton";
 import Footer from "../components/Footer";
 import TitleScreen from "./TitleScreen";
 import axios from "axios";
+import LoadingIcon from "../components/LoadingIcon";
+import { coinSound, Loose } from "../assets/sound";
+import { Howl, Howler } from "howler";
 
 const Game = () => {
+  const coinFX = new Howl({
+    src: [coinSound],
+    volume: 0.8,
+  });
+
+  const looseFX = new Howl({
+    src: [Loose],
+    volume: 0.8,
+  });
+
   const [number, setNumber] = useState([...Array(10).keys()]);
   const [lives, setLives] = useState(3);
   const [solution, setSolution] = useState("");
@@ -29,26 +42,35 @@ const Game = () => {
     }
   };
 
+  const playCoinSoundFX = () => {
+    coinFX.play();
+  };
+  const playLooseSoundFX = () => {
+    looseFX.play();
+  };
+
   //hadle user clicks
   const handleButtonClick = (number) => {
     if (solution === number) {
       // alert("Awnzer is Corret!");
       //set new score
+      playCoinSoundFX();
       setScore(score + 100);
       //refetch a new question
       fetchGameData();
     } else {
       // wrong awnzer ? then remove 1 life
+      playLooseSoundFX();
       setLives(lives - 1);
     }
     console.log(number);
   };
 
+  const EndOfTheGame = () => {};
+
   useEffect(() => {
     fetchGameData();
   }, []);
-
-  console.log(question, solution);
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -69,11 +91,7 @@ const Game = () => {
           </div>
           {/* main section that play out the game */}
           <div className="w-[650px] h-[350px] flex items-center justify-center">
-            {loading ? (
-              <p className="text-2xl text-white">Loading .... </p>
-            ) : (
-              <img src={question} alt="question" />
-            )}
+            {loading ? <LoadingIcon /> : <img src={question} alt="question" />}
           </div>
           <div className="flex flex-row gap-7">
             {number.map((number) => (
