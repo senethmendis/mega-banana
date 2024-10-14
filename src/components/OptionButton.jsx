@@ -3,7 +3,7 @@ import { Children } from "react";
 
 export const OptionButton = ({ children, onClick, className }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button type="button" onClick={onClick} className={className}>
       {children}
     </button>
   );

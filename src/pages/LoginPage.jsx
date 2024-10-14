@@ -5,13 +5,15 @@ import Footer from "../components/Footer";
 import InputField from "../components/InputField";
 import { OptionButton } from "../components/OptionButton";
 import { useNavigate } from "react-router-dom";
+import TitleScreen from "./TitleScreen";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   return (
     <section className="flex flex-col">
-      <img src={headerLogin} alt="logo" className="w-[450px] mx-auto" />
-      <div className="w-full h-[600px] flex flex-col justify-center items-center">
+      <TitleScreen image={headerLogin} size="w-[400px]" />
+      {/* <img src={headerLogin} alt="logo" className="w-[450px] mx-auto" /> */}
+      <div className="w-full h-[600px] flex flex-col justify-start items-center">
         <div className="w-full flex flex-col justify-center items-center gap-8">
           {/* content */}
 
@@ -27,7 +29,7 @@ const LoginPage = () => {
               </div>
 
               <OptionButton
-                className="border py-2 rounded-md w-full "
+                className="border py-2 rounded-md w-full bg-gradient-to-r from-yellow-400 to-green-500"
                 onClick={() => navigate("/play")}
               >
                 Login

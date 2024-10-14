@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const Layout = () => {
   return (
-    <main className="max-w-[1024px] my-auto mx-auto h-screen">
+    <main className="max-w-[1024px] my-auto mx-auto h-[1000px]">
       <Outlet />
     </main>
   );

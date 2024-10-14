@@ -6,8 +6,12 @@ import headerLogo from "./header.png";
 import headerLogin from "./header1.png";
 import headerRegister from "./header2.png";
 import headerScore from "./header3.png";
+import playBanana from "./play.png";
+
+import heart from "./icons/heart.webp";
 
 export {
+  heart,
   headerLogin,
   headerLogo,
   headerRegister,
@@ -15,4 +19,5 @@ export {
   normalbg,
   scoreBoard,
   headerScore,
+  playBanana,
 };

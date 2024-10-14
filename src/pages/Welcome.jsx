@@ -2,11 +2,14 @@ import React from "react";
 import { headerLogo, mainMenuBg } from "../assets";
 import Footer from "../components/Footer";
 import MenuButton from "../components/MenuButton";
+import { motion } from "framer-motion";
+import TitleScreen from "./TitleScreen";
 
 const Welcome = () => {
   return (
     <section className="flex flex-col">
-      <img src={headerLogo} alt="logo" className="w-[700px] mx-auto" />
+      <TitleScreen image={headerLogo} />
+
       <div className="w-full h-[650px] flex flex-col justify-center items-center">
         <div className="w-full flex flex-col justify-center items-center gap-8">
           <MenuButton link={"/play"} lable={"Play as Guest"} />
@@ -14,7 +17,7 @@ const Welcome = () => {
           <MenuButton link={"/register"} lable={"Register"} />
         </div>
       </div>
-      <Footer />
+      <Footer visibility={false} />
       <img
         src={mainMenuBg}
         alt="bg"
