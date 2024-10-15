@@ -1,6 +1,5 @@
 import React from "react";
 import { headerLogin, normalbg } from "../assets";
-import MenuButton from "../components/MenuButton";
 import Footer from "../components/Footer";
 import InputField from "../components/InputField";
 import { OptionButton } from "../components/OptionButton";
@@ -17,23 +16,23 @@ const LoginPage = () => {
         <div className="w-full flex flex-col justify-center items-center gap-8">
           {/* content */}
 
-          <div className="bg-black bg-black/50 p-20">
-            <form className="flex flex-col gap-3 items-center ">
-              <div className="flex gap-4 items-center">
+          <div className="bg-black bg-black/80 p-20 border border-custom-green">
+            <form className="flex flex-col gap-3 items-center text-custom-green ">
+              <div className="flex flex-col gap-4 items-start">
                 <label className="text-xl">UserName</label>
-                <InputField placeholder={"username"} />
+                <InputField />
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col gap-4 items-start">
                 <label className="text-xl">password</label>
-                <InputField placeholder={"password"} type={"password"} />
+                <InputField type={"password"} />
               </div>
 
-              <OptionButton
-                className="border py-2 rounded-md w-full bg-gradient-to-r from-yellow-400 to-green-500"
+              <button
+                className="w-full bg-custom-green hover:text-white rounded-sm h-12 text-black my-4"
                 onClick={() => navigate("/play")}
               >
                 Login
-              </OptionButton>
+              </button>
             </form>
           </div>
         </div>

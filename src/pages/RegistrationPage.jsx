@@ -17,27 +17,27 @@ const RegistrationPage = () => {
         <div className="w-full flex flex-col justify-center items-center gap-8">
           {/* content */}
 
-          <div className="bg-black bg-black/50 p-20">
-            <form className="flex flex-col gap-3 items-end ">
-              <div className="flex gap-4 items-center">
+          <div className="bg-black bg-black/80 p-20 border border-custom-green">
+            <form className="flex flex-col gap-3 items-end text-custom-green ">
+              <div className="flex flex-col gap-4 items-start">
                 <label className="text-xl">UserName</label>
                 <InputField placeholder={"username"} />
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col gap-4 items-start">
                 <label className="text-xl">Email</label>
                 <InputField placeholder={"email"} />
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col gap-4 items-start">
                 <label className="text-xl">password</label>
                 <InputField placeholder={"password"} type={"password"} />
               </div>
 
-              <OptionButton
-                className="border py-2 rounded-md w-full "
+              <button
+                className="w-full bg-custom-green hover:text-white rounded-sm h-12 text-black my-4"
                 onClick={() => navigate("/login")}
               >
                 Register
-              </OptionButton>
+              </button>
             </form>
           </div>
         </div>

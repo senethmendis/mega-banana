@@ -6,17 +6,16 @@ import TitleScreen from "./TitleScreen";
 import axios from "axios";
 import LoadingIcon from "../components/LoadingIcon";
 import { coinSound, Loose } from "../assets/sound";
-import { Howl, Howler } from "howler";
 
 const Game = () => {
   const coinFX = new Howl({
     src: [coinSound],
-    volume: 0.8,
+    volume: 0.4,
   });
 
   const looseFX = new Howl({
     src: [Loose],
-    volume: 0.8,
+    volume: 0.4,
   });
 
   const [number, setNumber] = useState([...Array(10).keys()]);
@@ -49,6 +48,12 @@ const Game = () => {
     looseFX.play();
   };
 
+  //handle restart
+  const handleRestart = () => {
+    setLives(3);
+    setScore(0);
+  };
+
   //hadle user clicks
   const handleButtonClick = (number) => {
     if (solution === number) {
@@ -62,15 +67,15 @@ const Game = () => {
       // wrong awnzer ? then remove 1 life
       playLooseSoundFX();
       setLives(lives - 1);
+      fetchGameData();
     }
-    console.log(number);
   };
-
-  const EndOfTheGame = () => {};
 
   useEffect(() => {
     fetchGameData();
   }, []);
+
+  console.log(solution);
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -91,14 +96,18 @@ const Game = () => {
           </div>
           {/* main section that play out the game */}
           <div className="w-[650px] h-[350px] flex items-center justify-center">
-            {loading ? <LoadingIcon /> : <img src={question} alt="question" />}
+            {loading ? (
+              <LoadingIcon />
+            ) : (
+              <img src={question} alt="question" className="rounded-md" />
+            )}
           </div>
           <div className="flex flex-row gap-7">
             {number.map((number) => (
               <button
                 key={number}
                 onClick={() => handleButtonClick(number)}
-                className=" bg-red-700 px-3 py-2 rounded-md"
+                className=" bg-custom-red px-3 py-2 rounded-md"
               >
                 {number}
               </button>
@@ -107,7 +116,13 @@ const Game = () => {
         </div>
       </div>
       <Footer>
-        <MenuButton lable={"restart"} />
+        <button
+          onClick={handleRestart}
+          className="text-2xl text-black hover:text-white
+         bg-custom-green px-3 py-1 rounded-sm "
+        >
+          Restart
+        </button>
       </Footer>
       <img
         src={mainMenuBg}

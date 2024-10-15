@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import bgMusic from "../assets/sound/hover.mp3";
 import Arrow from "../components/Arrow";
+import PixelArrow from "../components/PixelArrow";
 
 const MenuButton = ({ link, lable }) => {
   const [value, setvalue] = useState(0);
@@ -25,14 +26,15 @@ const MenuButton = ({ link, lable }) => {
   return (
     <Link
       to={link}
-      className="w-[300px] text-2xl hover:text-yellow-300 flex items-start  gap-6"
+      className="w-[400px] text-3xl hover:text-custom-yello flex items-start  gap-6"
       onMouseEnter={() => {
         setvalue(value + 1);
         setVisible(true);
       }}
       onMouseLeave={() => setVisible(false)}
     >
-      {lable} {visible ? <Arrow /> : null}
+      {lable}
+      {visible ? <PixelArrow onClick={() => navigate(-1)} /> : null}
     </Link>
   );
 };

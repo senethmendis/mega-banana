@@ -3,7 +3,6 @@ import { OptionButton } from "./OptionButton";
 import { Volume2, VolumeOff } from "lucide-react";
 import { bgMusic1 } from "../assets/sound";
 import { Howl, Howler } from "howler";
-import { pre } from "framer-motion/client";
 
 const BgMusicFX = () => {
   const [toggleMute, setToggleMute] = useState(false);
@@ -24,10 +23,10 @@ const BgMusicFX = () => {
 
   return (
     <OptionButton
-      className={"absolute bottom-[6rem] right-[10rem] "}
+      className={"absolute  top-[4rem] right-[21rem] "}
       onClick={toggleBgMusicFX}
     >
-      {toggleMute ? <Volume2 /> : <VolumeOff />}
+      {toggleMute ? <Volume2 color="#ffff33" /> : <VolumeOff color="#ffff33" />}
     </OptionButton>
   );
 };

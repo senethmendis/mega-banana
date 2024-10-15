@@ -4,15 +4,15 @@
 
 :root {
   @apply text-white;
-  font-family: "PixelOutline";
+  font-family: "ArcadeClassic";
   background-color: black;
   overflow: hidden;
 }
 
 @font-face {
-  font-family: "PixelOutline"; /*Can be any text*/
-  src: local("OutlinePixel7Solid"),
-    url("./font/OutlinePixel7Solid.ttf") format("truetype");
+  font-family: "ArcadeClassic"; /*Can be any text*/
+  src: local("ArcadeClassic"),
+    url("./fonts/ARCADECLASSIC.TTF") format("truetype");
 }
 
 body {

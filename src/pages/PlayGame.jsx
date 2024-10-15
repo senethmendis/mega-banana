@@ -13,7 +13,7 @@ const PlayGame = () => {
         <div className="w-full flex flex-col justify-center items-start gap-8">
           <MenuButton link={"/game"} lable={"start"} />
           <MenuButton link={"/leaderboard"} lable={"leaderboard"} />
-          <MenuButton link={"/help"} lable={"how to plat"} />
+          <MenuButton link={"/help"} lable={"how to play"} />
         </div>
       </div>
       <Footer />

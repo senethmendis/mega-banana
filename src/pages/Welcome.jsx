@@ -2,14 +2,15 @@ import React from "react";
 import { headerLogo, mainMenuBg } from "../assets";
 import Footer from "../components/Footer";
 import MenuButton from "../components/MenuButton";
-import { motion } from "framer-motion";
 import TitleScreen from "./TitleScreen";
+import WorldTimer from "../components/WorldTimer";
 
 const Welcome = () => {
   return (
     <section className="flex flex-col">
       <TitleScreen image={headerLogo} />
 
+      {/* <WorldTimer /> */}
       <div className="w-full h-[650px] flex flex-col justify-center items-center">
         <div className="w-full flex flex-col justify-center items-center gap-8">
           <MenuButton link={"/play"} lable={"Play as Guest"} />

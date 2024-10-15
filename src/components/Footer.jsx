@@ -1,17 +1,16 @@
-import { ArrowLeft, LogOut, Volume2, VolumeOff } from "lucide-react";
-import React, { useState } from "react";
-import { OptionButton } from "./OptionButton";
+import { ArrowLeft } from "lucide-react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Howl, Howler } from "howler";
 
 const Footer = ({ children, visibility = true }) => {
-  const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
 
   return (
     <footer className=" w-full h-full">
-      <div className=" flex flex-row justify-between">
-        {visibility ? <ArrowLeft onClick={() => navigate(-1)} /> : null}
+      <div className="max-w-[850px] flex flex-row items-center justify-between mx-auto">
+        {visibility ? (
+          <ArrowLeft color="#ffff33" onClick={() => navigate(-1)} />
+        ) : null}
 
         {children}
       </div>

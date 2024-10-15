@@ -11,7 +11,7 @@ const Leaderboard = () => {
     <section className="flex flex-col justify-start items-start">
       <TitleScreen image={headerScore} size="w-[500px]" />
       {/* <img src={headerScore} alt="logo" className="w-[700px] mx-auto" /> */}
-      <div className="w-full h-[650px] flex flex-col justify-center items-center mb-5 bg-black/90 ">
+      <div className="w-full h-[650px] flex flex-col justify-center items-center mb-5 bg-black/90 border border-custom-green ">
         <div className="w-full flex flex-col justify-center items-center gap-8">
           <div className="relative overflow-y-auto w-full h-[500px] hideScroll">
             <table className="w-full text-2xl text-center rtl:text-right text-white ">

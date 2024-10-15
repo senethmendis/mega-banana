@@ -7,10 +7,14 @@ import headerLogin from "./header1.png";
 import headerRegister from "./header2.png";
 import headerScore from "./header3.png";
 import playBanana from "./play.png";
+import headerInstruction from "./instruction.png";
 
 import heart from "./icons/heart.webp";
+import pixelArrow from "./icons/pixel-arrow.svg";
 
 export {
+  pixelArrow,
+  headerInstruction,
   heart,
   headerLogin,
   headerLogo,
