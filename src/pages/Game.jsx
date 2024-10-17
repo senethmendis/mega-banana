@@ -25,6 +25,7 @@ const Game = () => {
   const [score, setScore] = useState(0);
   const [loading, setLoading] = useState(true);
 
+  //move to  api link to .env file
   const fetchGameData = async () => {
     try {
       setLoading(true);

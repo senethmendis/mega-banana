@@ -8,7 +8,7 @@ import Game from "./pages/Game";
 import HowtoPlay from "./pages/HowtoPlay";
 import Leaderboard from "./pages/Leaderboard";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -24,6 +24,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
