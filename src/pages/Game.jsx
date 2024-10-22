@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { mainMenuBg, playBanana, heart } from "../assets";
-import MenuButton from "../components/MenuButton";
 import Footer from "../components/Footer";
-import TitleScreen from "./TitleScreen";
 import axios from "axios";
 import LoadingIcon from "../components/LoadingIcon";
 import { coinSound, Loose } from "../assets/sound";
@@ -80,7 +78,6 @@ const Game = () => {
 
   return (
     <section className="flex flex-col justify-center items-center">
-      <TitleScreen image={playBanana} size="w-[500px]" />
       {/* <img src={playBanana} alt="logo" className="w-[700px] mx-auto" /> */}
       <div className="w-full h-[650px] flex flex-col justify-center items-center">
         <div className="w-full flex flex-col justify-center items-center gap-8">

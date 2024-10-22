@@ -6,9 +6,9 @@ import WorldTimer from "../components/WorldTimer";
 const Layout = () => {
   return (
     <main className="max-w-[1024px] my-auto mx-auto h-[1000px]">
-      <BgMusicFX />
+      {/* <BgMusicFX /> */}
       <Outlet />
-      <WorldTimer />
+      {/* <WorldTimer /> */}
     </main>
   );
 };

@@ -1,14 +1,12 @@
 import React from "react";
 import { normalbg, headerInstruction } from "../assets";
-import Footer from "../components/Footer";
+
 import { useNavigate } from "react-router-dom";
-import TitleScreen from "./TitleScreen";
 
 const HowToPlay = () => {
   const navigate = useNavigate();
   return (
     <section className="flex flex-col">
-      <TitleScreen image={headerInstruction} size="w-[400px]" />
       {/* <img src={headerLogin} alt="logo" className="w-[450px] mx-auto" /> */}
       <div className="w-full h-[600px] flex flex-col justify-start items-center tracking-widest break-normal">
         <div className="w-full flex flex-col justify-center items-center gap-8">
